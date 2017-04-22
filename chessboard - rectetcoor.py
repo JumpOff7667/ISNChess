@@ -6,15 +6,11 @@ size = width, height = 512, 512
 sizepion = width, height = 64, 64
 sizecarre = width, height = 64, 64
 lignes, colonnes = 8, 8
-black = 0, 0, 0
 
 #Variables
-countlist = {}
-num = 0
 case = [[0] * colonnes for _ in range(lignes)]
 tours = []
 selection = 0
-stopsel = 0
 
 #Definir la taille de l'ecran
 screen = pygame.display.set_mode(size)
@@ -24,8 +20,8 @@ damier = pygame.image.load("Damier.gif")
 damierect = damier.get_rect()
 
 #Charger tour et son rectangle (avec redimension)
-tour_n = pygame.image.load("rook.png")
-tour_n = pygame.transform.scale(tour_n, (sizepion))
+tourn = pygame.image.load("rook.png")
+tourn = pygame.transform.scale(tourn, (sizepion))
 tourN = tour_n.get_rect()
 tours.append(tourN)
 
@@ -56,7 +52,7 @@ while 1:
                     
                 
     screen.blit(damier, damierect)
-    screen.blit(tour_n, tourN)
+    screen.blit(tourn, tourN)
     pygame.display.flip()
 
         
