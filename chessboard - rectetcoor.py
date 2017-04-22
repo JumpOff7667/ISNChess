@@ -22,7 +22,7 @@ damierect = damier.get_rect()
 #Charger tour et son rectangle (avec redimension)
 tourn = pygame.image.load("rook.png")
 tourn = pygame.transform.scale(tourn, (sizepion))
-tourN = tour_n.get_rect()
+tourN = tourn.get_rect()
 tours.append(tourN)
 
 #Carres du damier
@@ -43,7 +43,7 @@ while 1:
                 print("ok for selection")
             if selection in tours:
                 r3, r4 = int(x/64), int(y/64)
-                if case[r3][r4] == case[r3][r2] and not case[r3][r4].colliderect(selection):  
+                if (case[r3][r4] == case[r3][int(tourN.top/64)] or case[r3][r4] == case[int(tourN.left/64)][r4]) and not case[r3][r4].colliderect(selection):  
                     selection.clamp_ip(case[r3][r4])
                     selection = 0
                     print("ok for clamp")
