@@ -43,7 +43,7 @@ while 1:
             x, y = event.pos
             r1, r2 = int(x/64), int(y/64)
             if case[r1][r2].colliderect(tourN):
-                selection = tourect_n
+                selection = tourN
                 print("ok for selection")
             if selection in tours:
                 r3, r4 = int(x/64), int(y/64)
